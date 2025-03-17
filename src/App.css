@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+@source "../node_modules/flowbite-datepicker";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: oklch(0.72 0.11 178);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
