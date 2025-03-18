@@ -39,9 +39,10 @@ function EventForm({setIsOpen}) {
 
 
     const handleCreateEvent =() => {
-        console.log(title, date, location,category)
-        if (title && date && location && category) {
-            addEvent({title,description, date, location, category});
+        console.log(title, datepickerRef.current.value, location,category)
+        if (title && datepickerRef.current.value && location && category) {
+            const tempDate = datepickerRef.current.value;
+            addEvent({title,description, tempDate, location, category});
 
             setSuccessFulSub(true);
             
@@ -151,7 +152,7 @@ function EventForm({setIsOpen}) {
                                     placeholder="Select date"
                                     type="text"
                                     ref={datepickerRef}
-                                    onChange={(e) => setDate(e.target.value)}
+                                    onChange={(e) => {setDate(e.target.value); console.log(e.target.value)}}
 
                                 />
                             </div>
